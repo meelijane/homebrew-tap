@@ -1,6 +1,6 @@
 cask "exit-arc" do
-  version "0.3.0"
-  sha256 "812016407456934de291010a6e4ceb2b7cb20c8083921b02f366a151dd8dbb24"
+  version "0.4.0"
+  sha256 "a3fc3689708c58a8e5b46f5dcb5f74c3d1c10cc186b38ff4fff4cf0e834709fe"
 
   url "https://github.com/meelijane/exit-arc/releases/download/v#{version}/exit-arc.pyz"
   name "exit-arc"

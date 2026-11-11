@@ -1,6 +1,6 @@
 # meelijane/homebrew-tap
 
-Homebrew formulae by Milly Schmidt.
+Homebrew formulae and casks by Milly Schmidt.
 
 ```bash
 brew install meelijane/tap/exit-arc

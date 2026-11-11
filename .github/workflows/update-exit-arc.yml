@@ -1,0 +1,27 @@
+name: update exit-arc
+
+# Checks for a new exit-arc release every six hours (or when run by hand) and updates the cask.
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/update_exit_arc.py
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Commit the new version
+        run: |
+          if git diff --quiet; then exit 0; fi
+          v=$(sed -n 's/^  version "\(.*\)"/\1/p' Casks/exit-arc.rb)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "exit-arc $v"
+          git push

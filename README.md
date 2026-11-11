@@ -1,6 +1,6 @@
 # meelijane/homebrew-tap
 
-Homebrew formulae and casks by Milly Schmidt.
+Homebrew formulae and casks by Milly Schmidt. The exit-arc cask updates itself every six hours from the latest release.
 
 ```bash
 brew install meelijane/tap/exit-arc
